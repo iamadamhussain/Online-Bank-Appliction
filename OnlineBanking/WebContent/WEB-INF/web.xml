@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>OnlineBanking</display-name>
+	<welcome-file-list>
+		<welcome-file>Welcome.jsp</welcome-file>
+		<welcome-file>Registration.jsp</welcome-file>
+		<welcome-file>error.jsp</welcome-file>
+<!--  configuration of  session timeout -->
+	</welcome-file-list>
+	<session-config>
+		<session-timeout>5</session-timeout>
+	</session-config>
+
+	<!-- 1. User registration module -->
+	<servlet>
+
+		<servlet-name>RC</servlet-name>
+		<servlet-class>com.online.bank.application.controller.RegistrationController</servlet-class>
+		<load-on-startup>1</load-on-startup>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RC</servlet-name>
+		<url-pattern>/reg.do</url-pattern>
+	</servlet-mapping>
+	<!-- 2. UserLogin module -->
+
+
+	<servlet>
+
+		<servlet-name>LC</servlet-name>
+		<servlet-class>com.online.bank.application.controller.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LC</servlet-name>
+		<url-pattern>/login.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 3. User account balanc view module -->
+	<servlet>
+		<servlet-name>VBC</servlet-name>
+		<servlet-class>com.online.bank.application.controller.ViewBalanceController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VBC</servlet-name>
+		<url-pattern>/view.do</url-pattern>
+	</servlet-mapping>
+	<!-- 4 User money Transfer module -->
+	<servlet>
+		<servlet-name>MTC</servlet-name>
+		<servlet-class>com.online.bank.application.controller.MoneyTransferController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MTC</servlet-name>
+		<url-pattern>/money.do</url-pattern>
+	</servlet-mapping>
+	<!-- 5.User view Transaction history module -->
+	<servlet>
+
+		<servlet-name>VSC</servlet-name>
+
+		<servlet-class>com.online.bank.application.controller.ViewStatementController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VSC</servlet-name>
+		<url-pattern>/viewst.do</url-pattern>
+	</servlet-mapping>
+	<!-- 6.User logout module -->
+
+	<servlet>
+
+		<servlet-name>LOC</servlet-name>
+
+		<servlet-class>com.online.bank.application.controller.LogOutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LOC</servlet-name>
+		<url-pattern>/log</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+
+
+
+
+		<servlet-name>Regjsp</servlet-name>
+		<jsp-file>/view/Registration.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Regjsp</servlet-name>
+		<url-pattern>/Registration.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Acjsp</servlet-name>
+
+		<jsp-file>/view/account.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Acjsp</servlet-name>
+		<url-pattern>/account.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Wjsp</servlet-name>
+		<jsp-file>/view/Welcome.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Wjsp</servlet-name>
+		<url-pattern>/Welcome.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>loginjsp</servlet-name>
+		<jsp-file>/view/login.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginjsp</servlet-name>
+		<url-pattern>/login.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Dnjsp</servlet-name>
+		<jsp-file>/view/DisplayName.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dnjsp</servlet-name>
+		<url-pattern>/DisplayName.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>VBjsp</servlet-name>
+		<jsp-file>/view/ViewBalance.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VBjsp</servlet-name>
+		<url-pattern>/ViewBalance.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Tjsp</servlet-name>
+		<jsp-file>/view/Transaction.jsp</jsp-file>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Tjsp</servlet-name>
+		<url-pattern>/Transaction.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>TidDjsp</servlet-name>
+		<jsp-file>/view/Tiddisplay.jsp</jsp-file>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TidDjsp</servlet-name>
+		<url-pattern>/Tiddisplay.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>THjsp</servlet-name>
+		<jsp-file>/view/Transhistory.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>THjsp</servlet-name>
+		<url-pattern>/Transhistory.jsp</url-pattern>
+
+
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>VSjsp</servlet-name>
+		<jsp-file>/view/Viewstatement.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VSjsp</servlet-name>
+		<url-pattern>/Viewstatement.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+
+
+
+		<servlet-name>Logoutjsp</servlet-name>
+		<jsp-file>/view/LogOut.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+
+		<servlet-name>Logoutjsp</servlet-name>
+		<url-pattern>/LogOut.jsp</url-pattern>
+	</servlet-mapping>
+
+</web-app>
